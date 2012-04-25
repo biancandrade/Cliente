@@ -6,14 +6,14 @@ using SistemaCliente.DI;
 
 namespace SistemaCliente.Tests
 {
-    public class TodosClientesTestMock : ITodosClientes
+    public class TodosClientesTestMock : IClienteRepositorio
     {
         readonly List<Cliente> _clientes = new List<Cliente>();
 
         public Cliente Inserir(Cliente cliente)
         {
             //cliente.Codigo == 0 ? 1 : clientes.Max(c => c.Codigo) 
-            cliente.Codigo = _clientes.Count + 1;
+            cliente.Id = _clientes.Count + 1;
 
             _clientes.Add(cliente);
             return cliente;
@@ -36,7 +36,7 @@ namespace SistemaCliente.Tests
 
             //return null;
 
-            return _clientes.FirstOrDefault(cliente => cliente.Codigo == id);
+            return _clientes.FirstOrDefault(cliente => cliente.Id == id);
         }
     }
 }

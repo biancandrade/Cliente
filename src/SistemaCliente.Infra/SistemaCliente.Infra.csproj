@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TodosClientes.cs" />
+    <Compile Include="ClienteRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SistemaCliente.DI\SistemaCliente.DI.csproj">

@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SistemaCliente.DI
 {
     public class Cliente
     {
-        public int Codigo { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public DateTime DataCadastro { get; set; }
+        public List<Endereco> Enderecos { get; set; }
+
 
         public void VerificarSeNomeEhVazio()
         {

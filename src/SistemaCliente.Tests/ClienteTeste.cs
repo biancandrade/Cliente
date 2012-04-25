@@ -7,7 +7,7 @@ namespace SistemaCliente.Tests
     [TestFixture]
     public class ClienteTeste
     {
-        string connectionString = @"Database=db_sistemaCliente;Server=BIANCA-PC\b1;user=sa;pwd=sap@123;";
+        string connectionString = @"Database=db_sistemaCliente;Server=USUARIO-PC\APP;user=sa;pwd=sap@123;";
         string provider = @"System.Data.SqlClient";
 
         [SetUp]
@@ -143,7 +143,7 @@ namespace SistemaCliente.Tests
             var codigoCliente = 1;
             var clienteSalvo = clienteServico.ObterPor(codigoCliente);
 
-            Assert.AreEqual(cliente.Codigo, clienteSalvo.Codigo);
+            Assert.AreEqual(cliente.Id, clienteSalvo.Id);
             Assert.AreEqual(cliente.Nome, clienteSalvo.Nome);
             Assert.IsNotNull(cliente.DataCadastro);
 

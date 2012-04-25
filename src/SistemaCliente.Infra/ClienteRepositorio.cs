@@ -6,12 +6,15 @@ using WebMatrix.Data;
 
 namespace SistemaCliente.Infra
 {
-    public class TodosClientesBanco : ITodosClientes
+    public class ClienteRepositorio : IClienteRepositorio
     {
-        private readonly string _connectionString;
-        private readonly string _providerName;
+        string _connectionString = @"Database=db_sistemaCliente;Server=USUARIO-PC\APP;user=sa;pwd=sap@123;";
+        string _providerName = @"System.Data.SqlClient";
 
-        public TodosClientesBanco(string connectionString, string providerName)
+        //private readonly string _connectionString;
+        //private readonly string _providerName;
+
+        public ClienteRepositorio(string connectionString, string providerName)
         {
             _connectionString = connectionString;
             _providerName = providerName;
@@ -27,7 +30,7 @@ namespace SistemaCliente.Infra
 
             var id = db.QuerySingle("Select @@IDENTITY as LastIdentity").LastIdentity;
 
-            cliente.Codigo = Convert.ToInt32(id);
+            cliente.Id = Convert.ToInt32(id);
 
             return cliente;
         }
@@ -48,7 +51,7 @@ namespace SistemaCliente.Infra
             {
                 var cliente = new Cliente();
 
-                cliente.Codigo = linha.Codigo;
+                cliente.Id = linha.Codigo;
                 cliente.Nome = linha.Nome;
                 cliente.DataCadastro = linha.DataCadastro;
 
@@ -75,7 +78,7 @@ namespace SistemaCliente.Infra
             {
                 var cliente = new Cliente();
 
-                cliente.Codigo = linha.Codigo;
+                cliente.Id = linha.Codigo;
                 cliente.Nome = linha.Nome;
                 cliente.DataCadastro = linha.DataCadastro;
 

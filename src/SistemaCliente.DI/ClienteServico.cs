@@ -5,9 +5,9 @@ namespace SistemaCliente.DI
 {
     public class ClienteServico
     {
-        private readonly ITodosClientes _todosClientes;
+        private readonly IClienteRepositorio _todosClientes;
 
-        public ClienteServico(ITodosClientes todosClientes)
+        public ClienteServico(IClienteRepositorio todosClientes)
         {
             _todosClientes = todosClientes;
         }

@@ -5,12 +5,13 @@ using System.Text;
 
 namespace SistemaCliente.DI
 {
-    public interface ITodosClientes
+    public interface IClienteRepositorio
     {
         Cliente Inserir(Cliente cliente);
 
         List<Cliente> ObterTodos();
 
         Cliente ObterPor(int id);
+
     }
 }

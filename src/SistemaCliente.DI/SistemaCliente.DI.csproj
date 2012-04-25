@@ -48,7 +48,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteServico.cs" />
     <Compile Include="Endereco.cs" />
-    <Compile Include="ITodosClientes.cs" />
+    <Compile Include="IClienteRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

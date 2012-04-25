@@ -9,9 +9,10 @@ using System.Windows.Forms;
 
 namespace SistemaCliente
 {
-    public partial class formCliente : Form
+    public partial class FormInicial : Form
     {
-        public formCliente()
+
+        public FormInicial()
         {
             InitializeComponent();
         }

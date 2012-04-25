@@ -4,10 +4,12 @@ namespace SistemaCliente.DI
 {
     public class Endereco
     {
+        public int Id { get; set; }
         public string Tipo { get; set; }
         public string Nome { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
+        public Cliente ClienteId { get; set; }
 
         public void CheckSeTipoTemValor()
         {
