@@ -8,11 +8,8 @@ namespace SistemaCliente.Infra
 {
     public class ClienteRepositorio : IClienteRepositorio
     {
-        string _connectionString = @"Database=db_sistemaCliente;Server=USUARIO-PC\APP;user=sa;pwd=sap@123;";
-        string _providerName = @"System.Data.SqlClient";
-
-        //private readonly string _connectionString;
-        //private readonly string _providerName;
+        private readonly string _connectionString;
+        private readonly string _providerName;
 
         public ClienteRepositorio(string connectionString, string providerName)
         {

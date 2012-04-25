@@ -30,36 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.db_sistemaClienteDataSet = new SistemaCliente.db_sistemaClienteDataSet();
-            this.clienteTableAdapter = new SistemaCliente.db_sistemaClienteDataSetTableAdapters.ClienteTableAdapter();
             this.novoButton = new System.Windows.Forms.Button();
             this.editarButton = new System.Windows.Forms.Button();
             this.excluirButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.codClienteTextBox = new System.Windows.Forms.TextBox();
+            this.pesquisarClienteTextBox = new System.Windows.Forms.TextBox();
             this.pesquisarLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.db_sistemaClienteDataSet1 = new SistemaCliente.db_sistemaClienteDataSet();
-            this.db_sistemaClienteDataSet2 = new SistemaCliente.db_sistemaClienteDataSet();
+            this.pesquisarButton = new System.Windows.Forms.Button();
+            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.db_sistemaClienteDataSet4 = new SistemaCliente.db_sistemaClienteDataSet();
+            this.clienteTableAdapter2 = new SistemaCliente.db_sistemaClienteDataSetTableAdapters.ClienteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.db_sistemaClienteDataSet;
-            // 
-            // db_sistemaClienteDataSet
-            // 
-            this.db_sistemaClienteDataSet.DataSetName = "db_sistemaClienteDataSet";
-            this.db_sistemaClienteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clienteTableAdapter
-            // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
             // 
             // novoButton
             // 
@@ -71,6 +68,7 @@
             this.novoButton.TabIndex = 4;
             this.novoButton.Text = "Novo";
             this.novoButton.UseVisualStyleBackColor = true;
+            this.novoButton.Click += new System.EventHandler(this.novoButton_Click);
             // 
             // editarButton
             // 
@@ -104,13 +102,14 @@
             this.cancelarButton.TabIndex = 7;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
+            this.cancelarButton.Click += new System.EventHandler(this.cancelarButton_Click);
             // 
-            // codClienteTextBox
+            // pesquisarClienteTextBox
             // 
-            this.codClienteTextBox.Location = new System.Drawing.Point(152, 31);
-            this.codClienteTextBox.Name = "codClienteTextBox";
-            this.codClienteTextBox.Size = new System.Drawing.Size(235, 20);
-            this.codClienteTextBox.TabIndex = 9;
+            this.pesquisarClienteTextBox.Location = new System.Drawing.Point(152, 31);
+            this.pesquisarClienteTextBox.Name = "pesquisarClienteTextBox";
+            this.pesquisarClienteTextBox.Size = new System.Drawing.Size(235, 20);
+            this.pesquisarClienteTextBox.TabIndex = 9;
             // 
             // pesquisarLabel
             // 
@@ -122,44 +121,92 @@
             this.pesquisarLabel.TabIndex = 8;
             this.pesquisarLabel.Text = "Nome do cliente:";
             // 
-            // button1
+            // pesquisarButton
             // 
-            this.button1.Location = new System.Drawing.Point(393, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 21);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pesquisarButton.Location = new System.Drawing.Point(393, 31);
+            this.pesquisarButton.Name = "pesquisarButton";
+            this.pesquisarButton.Size = new System.Drawing.Size(86, 21);
+            this.pesquisarButton.TabIndex = 10;
+            this.pesquisarButton.Text = "Pesquisar";
+            this.pesquisarButton.UseVisualStyleBackColor = true;
+            this.pesquisarButton.Click += new System.EventHandler(this.pesquisarButton_Click);
             // 
-            // db_sistemaClienteDataSet1
+            // clienteBindingSource1
             // 
-            this.db_sistemaClienteDataSet1.DataSetName = "db_sistemaClienteDataSet";
-            this.db_sistemaClienteDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.clienteBindingSource1.DataMember = "Cliente";
             // 
-            // db_sistemaClienteDataSet2
+            // clienteBindingSource2
             // 
-            this.db_sistemaClienteDataSet2.DataSetName = "db_sistemaClienteDataSet";
-            this.db_sistemaClienteDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.clienteBindingSource2.DataMember = "Cliente";
             // 
-            // formCliente
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView1.DataSource = this.clienteBindingSource3;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(540, 171);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdCliente";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DataCadastro";
+            this.dataGridViewTextBoxColumn3.HeaderText = "DataCadastro";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // clienteBindingSource3
+            // 
+            this.clienteBindingSource3.DataMember = "Cliente";
+            this.clienteBindingSource3.DataSource = this.db_sistemaClienteDataSet4;
+            // 
+            // db_sistemaClienteDataSet4
+            // 
+            this.db_sistemaClienteDataSet4.DataSetName = "db_sistemaClienteDataSet";
+            this.db_sistemaClienteDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clienteTableAdapter2
+            // 
+            this.clienteTableAdapter2.ClearBeforeFill = true;
+            // 
+            // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 331);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.codClienteTextBox);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pesquisarButton);
+            this.Controls.Add(this.pesquisarClienteTextBox);
             this.Controls.Add(this.pesquisarLabel);
             this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.excluirButton);
             this.Controls.Add(this.editarButton);
             this.Controls.Add(this.novoButton);
-            this.Name = "formCliente";
+            this.Name = "FormInicial";
             this.Text = "Cliente";
-            this.Load += new System.EventHandler(this.formCliente_Load);
+            this.Load += new System.EventHandler(this.FormInicial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,11 +221,24 @@
         private System.Windows.Forms.Button editarButton;
         private System.Windows.Forms.Button excluirButton;
         private System.Windows.Forms.Button cancelarButton;
-        private System.Windows.Forms.TextBox codClienteTextBox;
+        private System.Windows.Forms.TextBox pesquisarClienteTextBox;
         private System.Windows.Forms.Label pesquisarLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button pesquisarButton;
         private db_sistemaClienteDataSet db_sistemaClienteDataSet1;
         private db_sistemaClienteDataSet db_sistemaClienteDataSet2;
+        private System.Windows.Forms.BindingSource clienteBindingSource1;
+        private db_sistemaClienteDataSet db_sistemaClienteDataSet3;
+        private System.Windows.Forms.BindingSource clienteBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataCadastroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private db_sistemaClienteDataSet db_sistemaClienteDataSet4;
+        private System.Windows.Forms.BindingSource clienteBindingSource3;
+        private db_sistemaClienteDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
 

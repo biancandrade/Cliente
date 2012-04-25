@@ -7,7 +7,7 @@ namespace SistemaCliente.Tests
     [TestFixture]
     public class ClienteTeste
     {
-        string connectionString = @"Database=db_sistemaCliente;Server=USUARIO-PC\APP;user=sa;pwd=sap@123;";
+        string connectionString = @"Database=db_sistemaCliente;Server=BIANCA-PC\B1;user=sa;pwd=sap@123;";
         string provider = @"System.Data.SqlClient";
 
         [SetUp]

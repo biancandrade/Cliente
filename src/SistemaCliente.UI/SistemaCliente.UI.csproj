@@ -108,6 +108,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaCliente.DI\SistemaCliente.DI.csproj">
+      <Project>{6B00EAC0-4B7F-4AE4-8BEA-50BCC619A35D}</Project>
+      <Name>SistemaCliente.DI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SistemaCliente.Infra\SistemaCliente.Infra.csproj">
+      <Project>{1F55D05B-8AB3-49D1-9146-A6A7281E9895}</Project>
+      <Name>SistemaCliente.Infra</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
