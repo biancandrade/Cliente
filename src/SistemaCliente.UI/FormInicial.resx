@@ -129,10 +129,19 @@
   <metadata name="clienteBindingSource3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>595, 95</value>
   </metadata>
-  <metadata name="db_sistemaClienteDataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 95</value>
+  <metadata name="clienteBindingSource4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>216, 134</value>
   </metadata>
-  <metadata name="clienteTableAdapter2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>768, 95</value>
+  <metadata name="db_sistemaClienteDataSet5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="clienteBindingSource4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>216, 134</value>
+  </metadata>
+  <metadata name="db_sistemaClienteDataSet5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="clienteTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>389, 134</value>
   </metadata>
 </root>

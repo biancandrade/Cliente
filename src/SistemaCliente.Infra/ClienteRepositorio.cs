@@ -21,9 +21,9 @@ namespace SistemaCliente.Infra
         {
             var  db= ObterBancoDados();
 
-            var query = "Insert Into Cliente (Nome, DataCadastro) values (@0,@1)";
+            var query = "Insert Into Cliente (Id, Nome) values (@0,@1)";
 
-            db.Execute(query, cliente.Nome, cliente.DataCadastro);
+            db.Execute(query, cliente.Id, cliente.Nome);
 
             var id = db.QuerySingle("Select @@IDENTITY as LastIdentity").LastIdentity;
 

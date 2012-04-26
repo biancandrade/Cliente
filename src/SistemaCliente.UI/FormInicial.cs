@@ -33,8 +33,10 @@ namespace SistemaCliente
 
         private void FormInicial_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'db_sistemaClienteDataSet4.Cliente' table. You can move, or remove it, as needed.
-            this.clienteTableAdapter2.Fill(this.db_sistemaClienteDataSet4.Cliente);
+            // TODO: This line of code loads data into the 'db_sistemaClienteDataSet5.Cliente' table. You can move, or remove it, as needed.
+            this.clienteTableAdapter1.Fill(this.db_sistemaClienteDataSet5.Cliente);
+
+            TotalRegistros();
 
         }
         
@@ -45,6 +47,12 @@ namespace SistemaCliente
         private void pesquisarButton_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void TotalRegistros()
+        {
+            var linhas = dgdClientes.RowCount;
+            label2.Text = "Total de registros: " + linhas;
         }
     }
 }
