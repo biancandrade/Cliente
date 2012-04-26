@@ -12,6 +12,5 @@ namespace SistemaCliente.DI
         List<Cliente> ObterTodos();
 
         Cliente ObterPor(int id);
-
     }
 }

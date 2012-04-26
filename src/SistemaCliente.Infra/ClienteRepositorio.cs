@@ -21,9 +21,9 @@ namespace SistemaCliente.Infra
         {
             var  db= ObterBancoDados();
 
-            var query = "Insert Into Cliente (Id, Nome) values (@0,@1)";
+            var query = "Insert Into Cliente (Id, Nome, DataCadastro) values (@0,@1,@2)";
 
-            db.Execute(query, cliente.Id, cliente.Nome);
+            db.Execute(query, cliente.Id, cliente.Nome, cliente.DataCadastro);
 
             var id = db.QuerySingle("Select @@IDENTITY as LastIdentity").LastIdentity;
 
@@ -31,6 +31,8 @@ namespace SistemaCliente.Infra
 
             return cliente;
         }
+
+    
 
         private Database ObterBancoDados()
         {
@@ -66,6 +68,7 @@ namespace SistemaCliente.Infra
 
             return ConveterParaCliente(queryResult).FirstOrDefault();
         }
+   
 
         private static List<Cliente> ConveterParaCliente(IEnumerable<dynamic> queryResult)
         {
@@ -83,5 +86,7 @@ namespace SistemaCliente.Infra
             }
             return clientes;
         }
+
+    
     }
 }

@@ -8,8 +8,12 @@ namespace SistemaCliente.DI
         public int Id { get; set; }
         public string Nome { get; set; }
         public DateTime DataCadastro { get; set; }
-        public List<Endereco> Enderecos { get; set; }
+        public Endereco Endereco { get; set; }
 
+        public Cliente()
+        {
+            Endereco = new Endereco();
+        }
 
         public void VerificarSeNomeEhVazio()
         {

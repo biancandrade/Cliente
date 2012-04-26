@@ -34,22 +34,25 @@
             this.bairroLabel = new System.Windows.Forms.Label();
             this.cidadeLabel = new System.Windows.Forms.Label();
             this.cidadeTextBox = new System.Windows.Forms.TextBox();
-            this.tipoLabel = new System.Windows.Forms.Label();
-            this.tipoTextBox = new System.Windows.Forms.TextBox();
-            this.enderecoLabel = new System.Windows.Forms.Label();
-            this.enderecoTextBox = new System.Windows.Forms.TextBox();
+            this.nomeEnderecoLabel = new System.Windows.Forms.Label();
+            this.nomeEnderecoTextBox = new System.Windows.Forms.TextBox();
             this.salvarButton = new System.Windows.Forms.Button();
             this.dataLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.codClienteLabel = new System.Windows.Forms.Label();
             this.codClienteTextBox = new System.Windows.Forms.TextBox();
+            this.dataTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.codEnderecoTextBox = new System.Windows.Forms.TextBox();
+            this.tipoEnderecoLabel = new System.Windows.Forms.Label();
+            this.tipoEnderecoTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nomeClienteLabel
             // 
             this.nomeClienteLabel.AutoSize = true;
             this.nomeClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.nomeClienteLabel.Location = new System.Drawing.Point(16, 62);
+            this.nomeClienteLabel.Location = new System.Drawing.Point(16, 61);
             this.nomeClienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nomeClienteLabel.Name = "nomeClienteLabel";
             this.nomeClienteLabel.Size = new System.Drawing.Size(49, 17);
@@ -58,7 +61,7 @@
             // 
             // nomeClienteTextBox
             // 
-            this.nomeClienteTextBox.Location = new System.Drawing.Point(99, 59);
+            this.nomeClienteTextBox.Location = new System.Drawing.Point(99, 58);
             this.nomeClienteTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomeClienteTextBox.Name = "nomeClienteTextBox";
             this.nomeClienteTextBox.Size = new System.Drawing.Size(325, 23);
@@ -66,7 +69,7 @@
             // 
             // bairroTextBox
             // 
-            this.bairroTextBox.Location = new System.Drawing.Point(99, 175);
+            this.bairroTextBox.Location = new System.Drawing.Point(99, 244);
             this.bairroTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.bairroTextBox.Name = "bairroTextBox";
             this.bairroTextBox.Size = new System.Drawing.Size(225, 23);
@@ -76,7 +79,7 @@
             // 
             this.bairroLabel.AutoSize = true;
             this.bairroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bairroLabel.Location = new System.Drawing.Point(16, 179);
+            this.bairroLabel.Location = new System.Drawing.Point(16, 248);
             this.bairroLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bairroLabel.Name = "bairroLabel";
             this.bairroLabel.Size = new System.Drawing.Size(50, 17);
@@ -87,7 +90,7 @@
             // 
             this.cidadeLabel.AutoSize = true;
             this.cidadeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cidadeLabel.Location = new System.Drawing.Point(16, 209);
+            this.cidadeLabel.Location = new System.Drawing.Point(16, 278);
             this.cidadeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cidadeLabel.Name = "cidadeLabel";
             this.cidadeLabel.Size = new System.Drawing.Size(56, 17);
@@ -96,53 +99,34 @@
             // 
             // cidadeTextBox
             // 
-            this.cidadeTextBox.Location = new System.Drawing.Point(99, 205);
+            this.cidadeTextBox.Location = new System.Drawing.Point(99, 274);
             this.cidadeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cidadeTextBox.Name = "cidadeTextBox";
             this.cidadeTextBox.Size = new System.Drawing.Size(225, 23);
             this.cidadeTextBox.TabIndex = 4;
             // 
-            // tipoLabel
+            // nomeEnderecoLabel
             // 
-            this.tipoLabel.AutoSize = true;
-            this.tipoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tipoLabel.Location = new System.Drawing.Point(16, 116);
-            this.tipoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.tipoLabel.Name = "tipoLabel";
-            this.tipoLabel.Size = new System.Drawing.Size(40, 17);
-            this.tipoLabel.TabIndex = 7;
-            this.tipoLabel.Text = "Tipo:";
+            this.nomeEnderecoLabel.AutoSize = true;
+            this.nomeEnderecoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.nomeEnderecoLabel.Location = new System.Drawing.Point(16, 218);
+            this.nomeEnderecoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nomeEnderecoLabel.Name = "nomeEnderecoLabel";
+            this.nomeEnderecoLabel.Size = new System.Drawing.Size(49, 17);
+            this.nomeEnderecoLabel.TabIndex = 9;
+            this.nomeEnderecoLabel.Text = "Nome:";
             // 
-            // tipoTextBox
+            // nomeEnderecoTextBox
             // 
-            this.tipoTextBox.Location = new System.Drawing.Point(99, 112);
-            this.tipoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.tipoTextBox.Name = "tipoTextBox";
-            this.tipoTextBox.Size = new System.Drawing.Size(225, 23);
-            this.tipoTextBox.TabIndex = 6;
-            // 
-            // enderecoLabel
-            // 
-            this.enderecoLabel.AutoSize = true;
-            this.enderecoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.enderecoLabel.Location = new System.Drawing.Point(16, 149);
-            this.enderecoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.enderecoLabel.Name = "enderecoLabel";
-            this.enderecoLabel.Size = new System.Drawing.Size(73, 17);
-            this.enderecoLabel.TabIndex = 9;
-            this.enderecoLabel.Text = "Endereço:";
-            // 
-            // enderecoTextBox
-            // 
-            this.enderecoTextBox.Location = new System.Drawing.Point(99, 145);
-            this.enderecoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.enderecoTextBox.Name = "enderecoTextBox";
-            this.enderecoTextBox.Size = new System.Drawing.Size(327, 23);
-            this.enderecoTextBox.TabIndex = 8;
+            this.nomeEnderecoTextBox.Location = new System.Drawing.Point(99, 214);
+            this.nomeEnderecoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nomeEnderecoTextBox.Name = "nomeEnderecoTextBox";
+            this.nomeEnderecoTextBox.Size = new System.Drawing.Size(327, 23);
+            this.nomeEnderecoTextBox.TabIndex = 8;
             // 
             // salvarButton
             // 
-            this.salvarButton.Location = new System.Drawing.Point(176, 240);
+            this.salvarButton.Location = new System.Drawing.Point(176, 291);
             this.salvarButton.Name = "salvarButton";
             this.salvarButton.Size = new System.Drawing.Size(75, 23);
             this.salvarButton.TabIndex = 10;
@@ -188,20 +172,69 @@
             this.codClienteTextBox.Size = new System.Drawing.Size(225, 23);
             this.codClienteTextBox.TabIndex = 13;
             // 
+            // dataTextBox
+            // 
+            this.dataTextBox.Location = new System.Drawing.Point(99, 85);
+            this.dataTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.dataTextBox.Name = "dataTextBox";
+            this.dataTextBox.Size = new System.Drawing.Size(128, 23);
+            this.dataTextBox.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(13, 149);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 17);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "CodigoEndereço:";
+            // 
+            // codEnderecoTextBox
+            // 
+            this.codEnderecoTextBox.Location = new System.Drawing.Point(138, 146);
+            this.codEnderecoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.codEnderecoTextBox.Name = "codEnderecoTextBox";
+            this.codEnderecoTextBox.Size = new System.Drawing.Size(128, 23);
+            this.codEnderecoTextBox.TabIndex = 17;
+            // 
+            // tipoEnderecoLabel
+            // 
+            this.tipoEnderecoLabel.AutoSize = true;
+            this.tipoEnderecoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tipoEnderecoLabel.Location = new System.Drawing.Point(14, 187);
+            this.tipoEnderecoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tipoEnderecoLabel.Name = "tipoEnderecoLabel";
+            this.tipoEnderecoLabel.Size = new System.Drawing.Size(40, 17);
+            this.tipoEnderecoLabel.TabIndex = 19;
+            this.tipoEnderecoLabel.Text = "Tipo:";
+            // 
+            // tipoEnderecoTextBox
+            // 
+            this.tipoEnderecoTextBox.Location = new System.Drawing.Point(97, 183);
+            this.tipoEnderecoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.tipoEnderecoTextBox.Name = "tipoEnderecoTextBox";
+            this.tipoEnderecoTextBox.Size = new System.Drawing.Size(327, 23);
+            this.tipoEnderecoTextBox.TabIndex = 18;
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 275);
+            this.ClientSize = new System.Drawing.Size(562, 352);
+            this.Controls.Add(this.tipoEnderecoLabel);
+            this.Controls.Add(this.tipoEnderecoTextBox);
+            this.Controls.Add(this.codEnderecoTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataTextBox);
             this.Controls.Add(this.codClienteLabel);
             this.Controls.Add(this.codClienteTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataLabel);
             this.Controls.Add(this.salvarButton);
-            this.Controls.Add(this.enderecoLabel);
-            this.Controls.Add(this.enderecoTextBox);
-            this.Controls.Add(this.tipoLabel);
-            this.Controls.Add(this.tipoTextBox);
+            this.Controls.Add(this.nomeEnderecoLabel);
+            this.Controls.Add(this.nomeEnderecoTextBox);
             this.Controls.Add(this.cidadeLabel);
             this.Controls.Add(this.cidadeTextBox);
             this.Controls.Add(this.bairroLabel);
@@ -225,14 +258,17 @@
         private System.Windows.Forms.Label bairroLabel;
         private System.Windows.Forms.Label cidadeLabel;
         private System.Windows.Forms.TextBox cidadeTextBox;
-        private System.Windows.Forms.Label tipoLabel;
-        private System.Windows.Forms.TextBox tipoTextBox;
-        private System.Windows.Forms.Label enderecoLabel;
-        private System.Windows.Forms.TextBox enderecoTextBox;
+        private System.Windows.Forms.Label nomeEnderecoLabel;
+        private System.Windows.Forms.TextBox nomeEnderecoTextBox;
         private System.Windows.Forms.Button salvarButton;
         private System.Windows.Forms.Label dataLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label codClienteLabel;
         private System.Windows.Forms.TextBox codClienteTextBox;
+        private System.Windows.Forms.TextBox dataTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox codEnderecoTextBox;
+        private System.Windows.Forms.Label tipoEnderecoLabel;
+        private System.Windows.Forms.TextBox tipoEnderecoTextBox;
     }
 }

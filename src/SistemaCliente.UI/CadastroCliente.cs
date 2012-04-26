@@ -14,11 +14,13 @@ namespace SistemaCliente
 {
     public partial class CadastroCliente : Form
     {
-        private static string connectionString = @"Database=db_sistemaCliente;Server=USUARIO-PC\APP;user=sa;pwd=sap@123;";
-        private static string providerName = @"System.Data.SqlClient";
+        private const string connectionString = @"Database=db_sistemaCliente;Server=BIANCA-PC\B1;user=sa;pwd=sap@123;";
+        private const string providerName = @"System.Data.SqlClient";
 
-        private IClienteRepositorio _repositorio = new ClienteRepositorio(connectionString, providerName);
+        private readonly IClienteRepositorio _repositorioCliente = new ClienteRepositorio(connectionString, providerName);
         private readonly Cliente cliente = new Cliente();
+        private readonly IEnderecoRepositorio _repositorioEndereco = new EnderecoRepositorio(connectionString, providerName);
+        private readonly Endereco endereco=  new Endereco();
 
 
         public CadastroCliente()
@@ -28,29 +30,29 @@ namespace SistemaCliente
 
         private void salvarButton_Click(object sender, EventArgs e)
         {
+
             cliente.Id = Convert.ToInt32(codClienteTextBox.Text);
             cliente.Nome = nomeClienteTextBox.Text;
-            //var data = Convert.ToDateTime(dataLabel.Text);
-            //data = new DateTime(2012, 04, 25);
-
-            //cliente.DataCadastro = Convert.ToDateTime(dataLabel.Text);
-
-            _repositorio.Inserir(cliente);
+            dataTextBox.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Now.Date);
+            cliente.DataCadastro = Convert.ToDateTime(dataTextBox.Text);
             
-                var message = "Cadastro inserido com sucesso!";
-                MessageBox.Show(message,"Cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
-            var form = new FormInicial();
-            form.Show();
+            endereco.Id = Convert.ToInt32(codEnderecoTextBox.Text);
+            endereco.Tipo = tipoEnderecoTextBox.Text;
+            endereco.Nome = nomeEnderecoTextBox.Text;
+            endereco.Bairro = bairroTextBox.Text;
+            endereco.Cidade = cidadeTextBox.Text;
+            endereco.Id = cliente.Id;
 
-            }
+            _repositorioCliente.Inserir(cliente);
+            _repositorioEndereco.Inserir(endereco);
 
-        public void CarregaGrid()
-        {
 
-            
+                var message = "Dados inseridos com sucesso!";
+                MessageBox.Show(message,"Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
+
         }
-
     }
     }
 

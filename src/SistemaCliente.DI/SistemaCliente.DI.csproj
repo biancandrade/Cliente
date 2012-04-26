@@ -49,6 +49,7 @@
     <Compile Include="ClienteServico.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="IClienteRepositorio.cs" />
+    <Compile Include="IEnderecoRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
