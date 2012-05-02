@@ -1,23 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using SistemaCliente.DI;
+using SistemaCliente.Infra;
 
 namespace SistemaCliente
 {
     public partial class FormInicial : Form
     {
+        private const string connectionString = @"Database=db_sistemaCliente;Server=BIANCA-PC\B1;user=sa;pwd=sap@123;";
+        private const string providerName = @"System.Data.SqlClient";
+
         private IClienteRepositorio _repositorio;
         private Cliente cliente;
 
         public FormInicial()
         {
             InitializeComponent();
+        }
+
+        private void FormInicial_Load(object sender, EventArgs e)
+        {
+            CarregaGrid();
+            TotalRegistros();
+        }
+
+        private void CarregaGrid()
+        {
+            _repositorio = new ClienteRepositorio(connectionString, providerName);
+            dgdClientes.DataSource = _repositorio.ObterTodos().ToList();
+            TotalRegistros();
         }
 
         private void novoButton_Click(object sender, EventArgs e)
@@ -30,16 +42,8 @@ namespace SistemaCliente
         {
             pesquisarClienteTextBox.Text = "";
         }
-
-        private void FormInicial_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'db_sistemaClienteDataSet5.Cliente' table. You can move, or remove it, as needed.
-            this.clienteTableAdapter1.Fill(this.db_sistemaClienteDataSet5.Cliente);
-
-            TotalRegistros();
-
-        }
         
+
         public void ProcessarNomePesquisado(string filtroNomeProduto)
         {
         }

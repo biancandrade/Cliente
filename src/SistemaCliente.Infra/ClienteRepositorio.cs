@@ -43,14 +43,14 @@ namespace SistemaCliente.Infra
         public List<Cliente> ObterTodos()
         {
             var db = ObterBancoDados();
-            var query = "Select Codigo,Nome,DataCadastro From Cliente";
+            var query = "Select Id,Nome,DataCadastro From Cliente";
             var clientes = new List<Cliente>();
 
             foreach (var linha in db.Query(query))
             {
                 var cliente = new Cliente();
 
-                cliente.Id = linha.Codigo;
+                cliente.Id = linha.Id;
                 cliente.Nome = linha.Nome;
                 cliente.DataCadastro = linha.DataCadastro;
 
