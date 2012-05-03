@@ -22,9 +22,9 @@ namespace SistemaCliente.Infra
         {
             var  db= ObterBancoDados();
 
-            var query = "Insert Into Endereco (Id, Tipo, Nome, Bairro, Cidade, ClienteId) values (@0,@1,@2,@3,@4,@5)";
+            var query = "Insert Into Endereco (Tipo, Nome, Bairro, Cidade, ClienteId) values (@0,@1,@2,@3,@4)";
 
-            db.Execute(query, endereco.Id, endereco.Tipo, endereco.Nome, endereco.Bairro, endereco.Cidade, endereco.ClienteId);
+            db.Execute(query, endereco.Tipo, endereco.Nome, endereco.Bairro, endereco.Cidade, endereco.ClienteId);
 
             var id = db.QuerySingle("Select @@IDENTITY as LastIdentity").LastIdentity;
 

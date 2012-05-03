@@ -9,7 +9,7 @@ namespace SistemaCliente.DI
         public string Nome { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
-        public Cliente ClienteId { get; set; }
+        public int ClienteId { get; set; }
 
         public void CheckSeTipoTemValor()
         {

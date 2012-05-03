@@ -21,18 +21,16 @@ namespace SistemaCliente.Infra
         {
             var  db= ObterBancoDados();
 
-            var query = "Insert Into Cliente (Id, Nome, DataCadastro) values (@0,@1,@2)";
+            var query = "Insert Into Cliente ( Nome, DataCadastro) values (@0,@1)";
 
-            db.Execute(query, cliente.Id, cliente.Nome, cliente.DataCadastro);
+            db.Execute(query, cliente.Nome, cliente.DataCadastro);
 
-            var id = db.QuerySingle("Select @@IDENTITY as LastIdentity").LastIdentity;
+            var id = db.QuerySingle("Select @@Identity as LastIdentity ").LastIdentity;
 
             cliente.Id = Convert.ToInt32(id);
 
             return cliente;
         }
-
-    
 
         private Database ObterBancoDados()
         {
