@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using SistemaCliente.DI;
 using SistemaCliente.Infra;
+using System.Collections.Generic;
 
 namespace SistemaCliente
 {
@@ -11,46 +14,28 @@ namespace SistemaCliente
         private const string connectionString = @"Database=db_sistemaCliente;Server=BIANCA-PC\B1;user=sa;pwd=sap@123;";
         private const string providerName = @"System.Data.SqlClient";
 
-        private IClienteRepositorio _repositorio;
+        private IClienteRepositorio _repositorioCliente;
         private Cliente cliente;
+
 
         public FormInicial()
         {
             InitializeComponent();
         }
 
-        private void FormInicial_Load(object sender, EventArgs e)
+        public void FormInicial_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'db_sistemaClienteDataSet21.Cliente' table. You can move, or remove it, as needed.
+            //this.clienteTableAdapter3.Fill(this.db_sistemaClienteDataSet21.Cliente);
             CarregaGrid();
+        }
+
+        public void CarregaGrid()
+        {
+            _repositorioCliente = new ClienteRepositorio(connectionString, providerName);
+
+            dgdClientes.DataSource = _repositorioCliente.ObterTodos().ToList();
             TotalRegistros();
-        }
-
-        private void CarregaGrid()
-        {
-            _repositorio = new ClienteRepositorio(connectionString, providerName);
-            dgdClientes.DataSource = _repositorio.ObterTodos().ToList();
-            TotalRegistros();
-        }
-
-        private void novoButton_Click(object sender, EventArgs e)
-        {
-            var form = new CadastroCliente();
-            form.Show();
-        }
-
-        private void cancelarButton_Click(object sender, EventArgs e)
-        {
-            pesquisarClienteTextBox.Text = "";
-        }
-        
-
-        public void ProcessarNomePesquisado(string filtroNomeProduto)
-        {
-        }
-
-        private void pesquisarButton_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void TotalRegistros()
@@ -58,5 +43,62 @@ namespace SistemaCliente
             var linhas = dgdClientes.RowCount;
             label2.Text = "Total de registros: " + linhas;
         }
+
+        private void novoButton_Click(object sender, EventArgs e)
+        {
+            var form = new CadastroCliente(cliente);
+            form.Show();
+        }
+
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pesquisarButton_Click(object sender, EventArgs e)
+        {
+            ProcessarConsultaCliente(pesquisarClienteTextBox.Text);
+        }
+
+        public void ProcessarConsultaCliente(string filtroNomeProduto)
+        {
+            if (!String.IsNullOrWhiteSpace(filtroNomeProduto))
+            {
+                dgdClientes.DataSource = _repositorioCliente.ObterPesquisa(filtroNomeProduto.Trim()).ToList();
+            }
+        }
+
+        private void editarButton_Click(object sender, EventArgs e)
+        {
+            SelecionaCliente();
+        }
+
+        public void SelecionaCliente()
+        {
+            if (dgdClientes.CurrentRow != null)
+                cliente = _repositorioCliente.ObterPor((int)dgdClientes.CurrentRow.Cells["columnCodigo"].Value);
+
+            var form = new CadastroCliente(cliente);
+            form.Show();
+        }
+
+        private void excluirButton_Click(object sender, EventArgs e)
+        {
+            if (dgdClientes.CurrentRow != null)
+            {
+                var mensagem = string.Format("Deseja excluir o contato: {0} ?", dgdClientes.CurrentRow.Cells["columnNome"].Value);
+
+                if (MessageBox.Show(mensagem, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2).Equals(DialogResult.Yes))
+                {
+                    cliente = _repositorioCliente.ObterPor((int)dgdClientes.CurrentRow.Cells["columnCodigo"].Value);
+                    _repositorioCliente.Excluir(cliente);
+
+                    CarregaGrid();
+                }
+            }
+          
+            }
+        }
     }
-}
+

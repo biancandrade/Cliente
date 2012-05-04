@@ -62,6 +62,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_sistemaClienteDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_sistemaClienteDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_sistemaClienteDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_sistemaClienteDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_sistemaClienteDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +106,28 @@
     </None>
     <None Include="db_sistemaClienteDataSet.xss">
       <DependentUpon>db_sistemaClienteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_sistemaClienteDataSet1.xsc">
+      <DependentUpon>db_sistemaClienteDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_sistemaClienteDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_sistemaClienteDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_sistemaClienteDataSet1.xss">
+      <DependentUpon>db_sistemaClienteDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_sistemaClienteDataSet2.xsc">
+      <DependentUpon>db_sistemaClienteDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="db_sistemaClienteDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_sistemaClienteDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_sistemaClienteDataSet2.xss">
+      <DependentUpon>db_sistemaClienteDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

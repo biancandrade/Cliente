@@ -21,7 +21,7 @@ namespace SistemaCliente.Infra
         {
             var  db= ObterBancoDados();
 
-            var query = "Insert Into Cliente ( Nome, DataCadastro) values (@0,@1)";
+            var query = "Insert Into Cliente (Nome, DataCadastro) values (@0, @1)";
 
             db.Execute(query, cliente.Nome, cliente.DataCadastro);
 
@@ -41,13 +41,13 @@ namespace SistemaCliente.Infra
         public List<Cliente> ObterTodos()
         {
             var db = ObterBancoDados();
-            var query = "Select Id,Nome,DataCadastro From Cliente";
+            const string query = "Select Id,Nome,DataCadastro From Cliente";
             var clientes = new List<Cliente>();
 
             foreach (var linha in db.Query(query))
             {
                 var cliente = new Cliente();
-
+                
                 cliente.Id = linha.Id;
                 cliente.Nome = linha.Nome;
                 cliente.DataCadastro = linha.DataCadastro;
@@ -61,14 +61,14 @@ namespace SistemaCliente.Infra
         public Cliente ObterPor(int id)
         {
             var db = ObterBancoDados();
-            var query = "Select Codigo,Nome,DataCadastro From Cliente Where Codigo = @0";
+            const string query = "Select Id,Nome,DataCadastro From Cliente Where Id = @0";
             var queryResult = db.Query(query, id);
 
-            return ConveterParaCliente(queryResult).FirstOrDefault();
+            return ConverterParaCliente(queryResult).FirstOrDefault();
         }
    
 
-        private static List<Cliente> ConveterParaCliente(IEnumerable<dynamic> queryResult)
+        private static List<Cliente> ConverterParaCliente(IEnumerable<dynamic> queryResult)
         {
             var clientes = new List<Cliente>();
 
@@ -76,7 +76,7 @@ namespace SistemaCliente.Infra
             {
                 var cliente = new Cliente();
 
-                cliente.Id = linha.Codigo;
+                cliente.Id = linha.Id;
                 cliente.Nome = linha.Nome;
                 cliente.DataCadastro = linha.DataCadastro;
 
@@ -85,6 +85,22 @@ namespace SistemaCliente.Infra
             return clientes;
         }
 
-    
+        public List<Cliente> ObterPesquisa(string nome)
+        {
+            var db = ObterBancoDados();
+            const string query = "Select Id, Nome, DataCadastro from cliente where Nome = @0";
+            var queryResult = db.Query(query, nome);
+
+            return ConverterParaCliente(queryResult);
+        }
+
+        public void Excluir(Cliente cliente)
+        {
+            var db = ObterBancoDados();
+
+            const string query = "DELETE FROM Cliente WHERE id = @0";
+
+            db.Execute(query, cliente.Id);
+        }
     }
 }

@@ -8,5 +8,7 @@ namespace SistemaCliente.DI
     public interface IEnderecoRepositorio
     {
         Endereco Inserir(Endereco endereco);
+
+        List<Endereco> ObterTodos();
     }
 }

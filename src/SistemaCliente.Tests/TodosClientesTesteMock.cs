@@ -38,5 +38,15 @@ namespace SistemaCliente.Tests
 
             return _clientes.FirstOrDefault(cliente => cliente.Id == id);
         }
+
+        public List<Cliente> ObterPesquisa(string nome)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Excluir(Cliente cliente)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

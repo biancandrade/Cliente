@@ -12,5 +12,9 @@ namespace SistemaCliente.DI
         List<Cliente> ObterTodos();
 
         Cliente ObterPor(int id);
+
+        List<Cliente> ObterPesquisa(string nome);
+
+        void Excluir(Cliente cliente);
     }
 }

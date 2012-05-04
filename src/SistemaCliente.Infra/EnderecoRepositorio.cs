@@ -22,7 +22,7 @@ namespace SistemaCliente.Infra
         {
             var  db= ObterBancoDados();
 
-            var query = "Insert Into Endereco (Tipo, Nome, Bairro, Cidade, ClienteId) values (@0,@1,@2,@3,@4)";
+            const string query = "Insert Into Endereco (Tipo, Nome, Bairro, Cidade, ClienteId) values (@0,@1,@2,@3,@4)";
 
             db.Execute(query, endereco.Tipo, endereco.Nome, endereco.Bairro, endereco.Cidade, endereco.ClienteId);
 
@@ -33,7 +33,29 @@ namespace SistemaCliente.Infra
             return endereco;
         }
 
-    
+        public List<Endereco> ObterTodos()
+        {
+            var db = ObterBancoDados();
+            const string query = "Select e.Tipo, e.Nome, e.Bairro, e.Cidade From Endereco e, Cliente where e.ClienteId = Cliente.Id ";
+
+            //var query = "Select Id, Tipo, Nome, Bairro, Cidade, ClienteId From Endereco where ClienteId = Cliente.Id";
+            var enderecos = new List<Endereco>();
+
+            foreach (var linha in db.Query(query))
+            {
+                var endereco = new Endereco();
+
+                endereco.Id = linha.Id;
+                endereco.Nome = linha.Nome;
+                endereco.Tipo = linha.Tipo;
+                endereco.Bairro = linha.Bairro;
+                endereco.Cidade = linha.Cidade;
+
+                enderecos.Add(endereco);
+            }
+
+            return enderecos;
+        }
 
         private Database ObterBancoDados()
         {
