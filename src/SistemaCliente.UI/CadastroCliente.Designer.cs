@@ -28,164 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nomeClienteLabel = new System.Windows.Forms.Label();
-            this.nomeClienteTextBox = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.salvarButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tipoEnderecoLabel = new System.Windows.Forms.Label();
-            this.tipoEnderecoTextBox = new System.Windows.Forms.TextBox();
-            this.nomeEnderecoLabel = new System.Windows.Forms.Label();
-            this.nomeEnderecoTextBox = new System.Windows.Forms.TextBox();
-            this.cidadeLabel = new System.Windows.Forms.Label();
-            this.cidadeTextBox = new System.Windows.Forms.TextBox();
-            this.bairroLabel = new System.Windows.Forms.Label();
-            this.bairroTextBox = new System.Windows.Forms.TextBox();
-            this.novoEnderecoButton = new System.Windows.Forms.Button();
             this.excluirEnderecoButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.novoEnderecoButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nomeClienteTextBox = new System.Windows.Forms.TextBox();
+            this.enderecoDataGridView = new System.Windows.Forms.DataGridView();
+            this.enderecoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_sistemaClienteDataSet3 = new SistemaCliente.db_sistemaClienteDataSet3();
+            this.enderecoTableAdapter = new SistemaCliente.db_sistemaClienteDataSet3TableAdapters.EnderecoTableAdapter();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.enderecoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enderecoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // nomeClienteLabel
-            // 
-            this.nomeClienteLabel.AutoSize = true;
-            this.nomeClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.nomeClienteLabel.Location = new System.Drawing.Point(21, 29);
-            this.nomeClienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.nomeClienteLabel.Name = "nomeClienteLabel";
-            this.nomeClienteLabel.Size = new System.Drawing.Size(49, 17);
-            this.nomeClienteLabel.TabIndex = 0;
-            this.nomeClienteLabel.Text = "Nome:";
-            // 
-            // nomeClienteTextBox
-            // 
-            this.nomeClienteTextBox.Location = new System.Drawing.Point(78, 26);
-            this.nomeClienteTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.nomeClienteTextBox.Name = "nomeClienteTextBox";
-            this.nomeClienteTextBox.Size = new System.Drawing.Size(515, 23);
-            this.nomeClienteTextBox.TabIndex = 2;
             // 
             // salvarButton
             // 
             this.salvarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvarButton.Location = new System.Drawing.Point(502, 367);
+            this.salvarButton.Location = new System.Drawing.Point(487, 260);
             this.salvarButton.Name = "salvarButton";
-            this.salvarButton.Size = new System.Drawing.Size(97, 31);
+            this.salvarButton.Size = new System.Drawing.Size(93, 26);
             this.salvarButton.TabIndex = 10;
             this.salvarButton.Text = "Salvar";
             this.salvarButton.UseVisualStyleBackColor = true;
             this.salvarButton.Click += new System.EventHandler(this.salvarButton_Click);
             // 
-            // label1
+            // excluirEnderecoButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 12;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.excluirEnderecoButton);
-            this.groupBox1.Controls.Add(this.novoEnderecoButton);
-            this.groupBox1.Controls.Add(this.tipoEnderecoLabel);
-            this.groupBox1.Controls.Add(this.tipoEnderecoTextBox);
-            this.groupBox1.Controls.Add(this.nomeEnderecoLabel);
-            this.groupBox1.Controls.Add(this.nomeEnderecoTextBox);
-            this.groupBox1.Controls.Add(this.cidadeLabel);
-            this.groupBox1.Controls.Add(this.cidadeTextBox);
-            this.groupBox1.Controls.Add(this.bairroLabel);
-            this.groupBox1.Controls.Add(this.bairroTextBox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(20, 85);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(579, 259);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Endereço";
-            // 
-            // tipoEnderecoLabel
-            // 
-            this.tipoEnderecoLabel.AutoSize = true;
-            this.tipoEnderecoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tipoEnderecoLabel.Location = new System.Drawing.Point(40, 51);
-            this.tipoEnderecoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.tipoEnderecoLabel.Name = "tipoEnderecoLabel";
-            this.tipoEnderecoLabel.Size = new System.Drawing.Size(40, 17);
-            this.tipoEnderecoLabel.TabIndex = 27;
-            this.tipoEnderecoLabel.Text = "Tipo:";
-            // 
-            // tipoEnderecoTextBox
-            // 
-            this.tipoEnderecoTextBox.Location = new System.Drawing.Point(105, 47);
-            this.tipoEnderecoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.tipoEnderecoTextBox.Name = "tipoEnderecoTextBox";
-            this.tipoEnderecoTextBox.Size = new System.Drawing.Size(327, 23);
-            this.tipoEnderecoTextBox.TabIndex = 22;
-            // 
-            // nomeEnderecoLabel
-            // 
-            this.nomeEnderecoLabel.AutoSize = true;
-            this.nomeEnderecoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.nomeEnderecoLabel.Location = new System.Drawing.Point(31, 82);
-            this.nomeEnderecoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.nomeEnderecoLabel.Name = "nomeEnderecoLabel";
-            this.nomeEnderecoLabel.Size = new System.Drawing.Size(49, 17);
-            this.nomeEnderecoLabel.TabIndex = 26;
-            this.nomeEnderecoLabel.Text = "Nome:";
-            // 
-            // nomeEnderecoTextBox
-            // 
-            this.nomeEnderecoTextBox.Location = new System.Drawing.Point(107, 78);
-            this.nomeEnderecoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.nomeEnderecoTextBox.Name = "nomeEnderecoTextBox";
-            this.nomeEnderecoTextBox.Size = new System.Drawing.Size(327, 23);
-            this.nomeEnderecoTextBox.TabIndex = 23;
-            // 
-            // cidadeLabel
-            // 
-            this.cidadeLabel.AutoSize = true;
-            this.cidadeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cidadeLabel.Location = new System.Drawing.Point(24, 142);
-            this.cidadeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.cidadeLabel.Name = "cidadeLabel";
-            this.cidadeLabel.Size = new System.Drawing.Size(56, 17);
-            this.cidadeLabel.TabIndex = 21;
-            this.cidadeLabel.Text = "Cidade:";
-            // 
-            // cidadeTextBox
-            // 
-            this.cidadeTextBox.Location = new System.Drawing.Point(107, 138);
-            this.cidadeTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.cidadeTextBox.Name = "cidadeTextBox";
-            this.cidadeTextBox.Size = new System.Drawing.Size(325, 23);
-            this.cidadeTextBox.TabIndex = 25;
-            // 
-            // bairroLabel
-            // 
-            this.bairroLabel.AutoSize = true;
-            this.bairroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.bairroLabel.Location = new System.Drawing.Point(30, 112);
-            this.bairroLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bairroLabel.Name = "bairroLabel";
-            this.bairroLabel.Size = new System.Drawing.Size(50, 17);
-            this.bairroLabel.TabIndex = 20;
-            this.bairroLabel.Text = "Bairro:";
-            // 
-            // bairroTextBox
-            // 
-            this.bairroTextBox.Location = new System.Drawing.Point(107, 108);
-            this.bairroTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.bairroTextBox.Name = "bairroTextBox";
-            this.bairroTextBox.Size = new System.Drawing.Size(325, 23);
-            this.bairroTextBox.TabIndex = 24;
+            this.excluirEnderecoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.excluirEnderecoButton.Location = new System.Drawing.Point(399, 260);
+            this.excluirEnderecoButton.Name = "excluirEnderecoButton";
+            this.excluirEnderecoButton.Size = new System.Drawing.Size(82, 26);
+            this.excluirEnderecoButton.TabIndex = 29;
+            this.excluirEnderecoButton.Text = "Excluir";
+            this.excluirEnderecoButton.UseVisualStyleBackColor = true;
+            this.excluirEnderecoButton.Click += new System.EventHandler(this.excluirEnderecoButton_Click);
             // 
             // novoEnderecoButton
             // 
             this.novoEnderecoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoEnderecoButton.Location = new System.Drawing.Point(309, 196);
+            this.novoEnderecoButton.Location = new System.Drawing.Point(311, 260);
             this.novoEnderecoButton.Name = "novoEnderecoButton";
             this.novoEnderecoButton.Size = new System.Drawing.Size(82, 26);
             this.novoEnderecoButton.TabIndex = 28;
@@ -193,41 +83,120 @@
             this.novoEnderecoButton.UseVisualStyleBackColor = true;
             this.novoEnderecoButton.Click += new System.EventHandler(this.novoEnderecoButton_Click);
             // 
-            // excluirEnderecoButton
+            // label2
             // 
-            this.excluirEnderecoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.excluirEnderecoButton.Location = new System.Drawing.Point(394, 196);
-            this.excluirEnderecoButton.Name = "excluirEnderecoButton";
-            this.excluirEnderecoButton.Size = new System.Drawing.Size(82, 26);
-            this.excluirEnderecoButton.TabIndex = 29;
-            this.excluirEnderecoButton.Text = "Excluir";
-            this.excluirEnderecoButton.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(22, 29);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Nome:";
             // 
-            // button3
+            // nomeClienteTextBox
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(480, 196);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 26);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.nomeClienteTextBox.Location = new System.Drawing.Point(84, 25);
+            this.nomeClienteTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nomeClienteTextBox.Name = "nomeClienteTextBox";
+            this.nomeClienteTextBox.Size = new System.Drawing.Size(545, 23);
+            this.nomeClienteTextBox.TabIndex = 31;
+            // 
+            // enderecoDataGridView
+            // 
+            this.enderecoDataGridView.AutoGenerateColumns = false;
+            this.enderecoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.enderecoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.clienteIdDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.bairroDataGridViewTextBoxColumn,
+            this.cidadeDataGridViewTextBoxColumn});
+            this.enderecoDataGridView.DataSource = this.enderecoBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.enderecoDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.enderecoDataGridView.Location = new System.Drawing.Point(12, 82);
+            this.enderecoDataGridView.Name = "enderecoDataGridView";
+            this.enderecoDataGridView.Size = new System.Drawing.Size(618, 150);
+            this.enderecoDataGridView.TabIndex = 33;
+            // 
+            // enderecoBindingSource
+            // 
+            this.enderecoBindingSource.DataMember = "Endereco";
+            this.enderecoBindingSource.DataSource = this.db_sistemaClienteDataSet3;
+            // 
+            // db_sistemaClienteDataSet3
+            // 
+            this.db_sistemaClienteDataSet3.DataSetName = "db_sistemaClienteDataSet3";
+            this.db_sistemaClienteDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // enderecoTableAdapter
+            // 
+            this.enderecoTableAdapter.ClearBeforeFill = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Id";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // clienteIdDataGridViewTextBoxColumn
+            // 
+            this.clienteIdDataGridViewTextBoxColumn.DataPropertyName = "ClienteId";
+            this.clienteIdDataGridViewTextBoxColumn.HeaderText = "ClienteId";
+            this.clienteIdDataGridViewTextBoxColumn.Name = "clienteIdDataGridViewTextBoxColumn";
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // bairroDataGridViewTextBoxColumn
+            // 
+            this.bairroDataGridViewTextBoxColumn.DataPropertyName = "Bairro";
+            this.bairroDataGridViewTextBoxColumn.HeaderText = "Bairro";
+            this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
+            // 
+            // cidadeDataGridViewTextBoxColumn
+            // 
+            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
             // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 410);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.salvarButton);
+            this.ClientSize = new System.Drawing.Size(642, 324);
+            this.Controls.Add(this.enderecoDataGridView);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.excluirEnderecoButton);
+            this.Controls.Add(this.novoEnderecoButton);
             this.Controls.Add(this.nomeClienteTextBox);
-            this.Controls.Add(this.nomeClienteLabel);
+            this.Controls.Add(this.salvarButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastroCliente";
-            this.Text = "CadastroCliente";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Text = "Cadastrar Cliente";
+            this.Load += new System.EventHandler(this.CadastroCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.enderecoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enderecoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,21 +204,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label nomeClienteLabel;
-        private System.Windows.Forms.TextBox nomeClienteTextBox;
         private System.Windows.Forms.Button salvarButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button excluirEnderecoButton;
         private System.Windows.Forms.Button novoEnderecoButton;
-        private System.Windows.Forms.Label tipoEnderecoLabel;
-        private System.Windows.Forms.TextBox tipoEnderecoTextBox;
-        private System.Windows.Forms.Label nomeEnderecoLabel;
-        private System.Windows.Forms.TextBox nomeEnderecoTextBox;
-        private System.Windows.Forms.Label cidadeLabel;
-        private System.Windows.Forms.TextBox cidadeTextBox;
-        private System.Windows.Forms.Label bairroLabel;
-        private System.Windows.Forms.TextBox bairroTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox nomeClienteTextBox;
+        private System.Windows.Forms.DataGridView enderecoDataGridView;
+        private db_sistemaClienteDataSet3 db_sistemaClienteDataSet3;
+        private System.Windows.Forms.BindingSource enderecoBindingSource;
+        private db_sistemaClienteDataSet3TableAdapters.EnderecoTableAdapter enderecoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clienteIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bairroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using SistemaCliente.DI;
 using SistemaCliente.Infra;
@@ -24,6 +25,7 @@ namespace SistemaCliente
             {
                 nomeClienteTextBox.Text = cliente.Nome;
                 nomeClienteTextBox.Enabled = false;
+                enderecoDataGridView.DataSource = _repositorioEndereco.ObterTodos().ToList();
             }
         }
 
@@ -48,10 +50,10 @@ namespace SistemaCliente
                     cliente.Nome = nomeClienteTextBox.Text;
                     var data = DateTime.Now;
                     cliente.DataCadastro = data;
-                    endereco.Tipo = tipoEnderecoTextBox.Text;
-                    endereco.Nome = nomeEnderecoTextBox.Text;
-                    endereco.Bairro = bairroTextBox.Text;
-                    endereco.Cidade = cidadeTextBox.Text;
+                    //endereco.Tipo = tipoEnderecoTextBox.Text;
+                    //endereco.Nome = nomeEnderecoTextBox.Text;
+                    //endereco.Bairro = bairroTextBox.Text;
+                    //endereco.Cidade = cidadeTextBox.Text;
 
                     endereco.ClienteId = _repositorioCliente.Inserir(cliente).Id;
                     _repositorioEndereco.Inserir(endereco);
@@ -61,36 +63,30 @@ namespace SistemaCliente
 
                     var form = new FormInicial();
                     form.CarregaGrid();
-                    LimparTextBoxEndereco();
                     this.Close();
                 }
             }
         }
 
-        private void novoEnderecoButton_Click(object sender, EventArgs e)
+        
+        
+
+        private void CadastroCliente_Load(object sender, EventArgs e)
         {
-            nomeClienteTextBox.Enabled = true;
+            // TODO: This line of code loads data into the 'db_sistemaClienteDataSet3.Endereco' table. You can move, or remove it, as needed.
+            this.enderecoTableAdapter.Fill(this.db_sistemaClienteDataSet3.Endereco);
 
-            endereco.ClienteId = cliente.Id;
-            endereco.Tipo = tipoEnderecoTextBox.Text;
-            endereco.Nome = nomeEnderecoTextBox.Text;
-            endereco.Bairro = bairroTextBox.Text;
-            endereco.Cidade = cidadeTextBox.Text;
-
-            endereco.ClienteId = _repositorioCliente.Inserir(cliente).Id;
-            _repositorioEndereco.Inserir(endereco);
-
-            //Salvar();
-            
-            LimparTextBoxEndereco();
         }
 
-        private void LimparTextBoxEndereco()
+        private void excluirEnderecoButton_Click(object sender, EventArgs e)
         {
-            tipoEnderecoTextBox.Text = "";
-            nomeEnderecoTextBox.Text = "";
-            bairroTextBox.Text = "";
-            cidadeTextBox.Text = "";
+
+        }
+
+        private void novoEnderecoButton_Click(object sender, EventArgs e)
+        {
+            var form = new CadastroEndereco(endereco);
+            form.Show();
         }
     }
 }

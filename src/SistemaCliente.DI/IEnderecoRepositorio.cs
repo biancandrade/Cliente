@@ -10,5 +10,6 @@ namespace SistemaCliente.DI
         Endereco Inserir(Endereco endereco);
 
         List<Endereco> ObterTodos();
+        
     }
 }

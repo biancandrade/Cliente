@@ -36,7 +36,7 @@ namespace SistemaCliente.Infra
         public List<Endereco> ObterTodos()
         {
             var db = ObterBancoDados();
-            const string query = "Select e.Tipo, e.Nome, e.Bairro, e.Cidade From Endereco e, Cliente where e.ClienteId = Cliente.Id ";
+            const string query = "Select e.Id, e.ClienteId, e.Tipo, e.Nome, e.Bairro, e.Cidade From Endereco e, Cliente where e.ClienteId = Cliente.Id ";
 
             //var query = "Select Id, Tipo, Nome, Bairro, Cidade, ClienteId From Endereco where ClienteId = Cliente.Id";
             var enderecos = new List<Endereco>();
@@ -46,6 +46,7 @@ namespace SistemaCliente.Infra
                 var endereco = new Endereco();
 
                 endereco.Id = linha.Id;
+                endereco.ClienteId = linha.ClienteId;
                 endereco.Nome = linha.Nome;
                 endereco.Tipo = linha.Tipo;
                 endereco.Bairro = linha.Bairro;
