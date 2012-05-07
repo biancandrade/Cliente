@@ -15,18 +15,14 @@ namespace SistemaCliente
         private const string providerName = @"System.Data.SqlClient";
 
         private IClienteRepositorio _repositorioCliente;
-        private Cliente cliente;
+        private IEnderecoRepositorio _repositorioEndereco;
 
+        private Cliente cliente;
+        private Endereco endereco;
 
         public FormInicial()
         {
             InitializeComponent();
-        }
-
-        public void FormInicial_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'db_sistemaClienteDataSet21.Cliente' table. You can move, or remove it, as needed.
-            //this.clienteTableAdapter3.Fill(this.db_sistemaClienteDataSet21.Cliente);
             CarregaGrid();
         }
 
@@ -84,6 +80,11 @@ namespace SistemaCliente
 
         private void excluirButton_Click(object sender, EventArgs e)
         {
+            Excluir();
+        }
+
+        private void Excluir()
+        {
             if (dgdClientes.CurrentRow != null)
             {
                 var mensagem = string.Format("Deseja excluir o contato: {0} ?", dgdClientes.CurrentRow.Cells["columnNome"].Value);
@@ -91,14 +92,17 @@ namespace SistemaCliente
                 if (MessageBox.Show(mensagem, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2).Equals(DialogResult.Yes))
                 {
-                    cliente = _repositorioCliente.ObterPor((int)dgdClientes.CurrentRow.Cells["columnCodigo"].Value);
+                    cliente = _repositorioCliente.ObterPor((int) dgdClientes.CurrentRow.Cells["columnCodigo"].Value);
+
+                    _repositorioEndereco.Excluir(endereco);
                     _repositorioCliente.Excluir(cliente);
+
+                    _repositorioEndereco.Inserir(endereco);
 
                     CarregaGrid();
                 }
             }
-          
-            }
         }
+    }
     }
 

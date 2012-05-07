@@ -71,6 +71,7 @@
             this.inserirEnderecoButton.TabIndex = 30;
             this.inserirEnderecoButton.Text = "Inserir";
             this.inserirEnderecoButton.UseVisualStyleBackColor = true;
+            this.inserirEnderecoButton.Click += new System.EventHandler(this.inserirEnderecoButton_Click);
             // 
             // tipoEnderecoLabel
             // 

@@ -10,6 +10,9 @@ namespace SistemaCliente.DI
         Endereco Inserir(Endereco endereco);
 
         List<Endereco> ObterTodos();
-        
+
+        List<Endereco> ObterPor(int id);
+
+        void Excluir(Endereco endereco);
     }
 }

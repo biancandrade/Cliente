@@ -234,7 +234,6 @@
             this.Controls.Add(this.novoButton);
             this.Name = "FormInicial";
             this.Text = "Cliente";
-            this.Load += new System.EventHandler(this.FormInicial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource2)).EndInit();

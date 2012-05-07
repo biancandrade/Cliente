@@ -16,31 +16,28 @@ namespace SistemaCliente
         private const string connectionString = @"Database=db_sistemaCliente;Server=BIANCA-PC\B1;user=sa;pwd=sap@123;";
         private const string providerName = @"System.Data.SqlClient";
 
-        private readonly IClienteRepositorio _repositorioCliente = new ClienteRepositorio(connectionString, providerName);
-        private readonly Cliente cliente = new Cliente();
         private readonly IEnderecoRepositorio _repositorioEndereco = new EnderecoRepositorio(connectionString, providerName);
-        private readonly Endereco endereco = new Endereco();
-
+        private readonly Endereco endereco;
 
         public CadastroEndereco(Endereco endereco)
         {
             InitializeComponent();
+            this.endereco = endereco;
         }
 
-        private void novoEnderecoButton_Click(object sender, EventArgs e)
+        private void inserirEnderecoButton_Click(object sender, EventArgs e)
         {
-            //nomeClienteTextBox.Enabled = true;
-
-            endereco.ClienteId = cliente.Id;
             endereco.Tipo = tipoEnderecoTextBox.Text;
             endereco.Nome = nomeEnderecoTextBox.Text;
             endereco.Bairro = bairroTextBox.Text;
             endereco.Cidade = cidadeTextBox.Text;
 
-            endereco.ClienteId = _repositorioCliente.Inserir(cliente).Id;
             _repositorioEndereco.Inserir(endereco);
 
-            //Salvar();
+            const string message = "Endereço inserido com sucesso!";
+            MessageBox.Show(message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
         }
     }
 }

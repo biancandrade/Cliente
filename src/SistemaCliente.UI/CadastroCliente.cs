@@ -12,71 +12,39 @@ namespace SistemaCliente
         private const string providerName = @"System.Data.SqlClient";
 
         private readonly IClienteRepositorio _repositorioCliente = new ClienteRepositorio(connectionString, providerName);
-        private readonly Cliente cliente = new Cliente();
-        private readonly IEnderecoRepositorio _repositorioEndereco = new EnderecoRepositorio(connectionString, providerName);
-        private readonly Endereco endereco = new Endereco();
-
+        private Cliente cliente;
+        private readonly IEnderecoRepositorio _repositorioEndereco = new EnderecoRepositorio(connectionString,providerName);
+        private Endereco endereco;
 
         public CadastroCliente(Cliente cliente)
         {
             InitializeComponent();
+            ModoEditavel(cliente);
+            this.cliente = cliente;
+            TotalRegistros();
+        }
 
-            if (cliente !=null)
+        private void ModoEditavel(Cliente _cliente)
+        {
+            if (_cliente != null)
             {
-                nomeClienteTextBox.Text = cliente.Nome;
+                nomeClienteTextBox.Text = _cliente.Nome;
                 nomeClienteTextBox.Enabled = false;
-                enderecoDataGridView.DataSource = _repositorioEndereco.ObterTodos().ToList();
+                enderecoDataGridView.DataSource = _repositorioEndereco.ObterPor(_cliente.Id).ToList();
             }
-        }
-
-        private void salvarButton_Click(object sender, EventArgs e)
-        {
-            Salvar();
-
-            //this.Close();
-        }
-
-        private void Salvar()
-        {
-            if (nomeClienteTextBox.Text == "")
-            {
-                MessageBox.Show("Campo nulo! Informe um cliente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
             else
             {
-                if (nomeClienteTextBox != null)
-                {
-                    cliente.Nome = nomeClienteTextBox.Text;
-                    var data = DateTime.Now;
-                    cliente.DataCadastro = data;
-                    //endereco.Tipo = tipoEnderecoTextBox.Text;
-                    //endereco.Nome = nomeEnderecoTextBox.Text;
-                    //endereco.Bairro = bairroTextBox.Text;
-                    //endereco.Cidade = cidadeTextBox.Text;
-
-                    endereco.ClienteId = _repositorioCliente.Inserir(cliente).Id;
-                    _repositorioEndereco.Inserir(endereco);
-
-                    const string message = "Dados inseridos com sucesso!";
-                    MessageBox.Show(message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    var form = new FormInicial();
-                    form.CarregaGrid();
-                    this.Close();
-                }
+                nomeClienteTextBox.Enabled = true;
+                enderecoDataGridView.DataSource = new object();
             }
         }
 
-        
-        
-
-        private void CadastroCliente_Load(object sender, EventArgs e)
+        private void TotalRegistros()
         {
-            // TODO: This line of code loads data into the 'db_sistemaClienteDataSet3.Endereco' table. You can move, or remove it, as needed.
-            this.enderecoTableAdapter.Fill(this.db_sistemaClienteDataSet3.Endereco);
-
+            var linhas = enderecoDataGridView.RowCount;
+            label1.Text = "Total de registros: " + linhas;
         }
+
 
         private void excluirEnderecoButton_Click(object sender, EventArgs e)
         {
@@ -85,8 +53,45 @@ namespace SistemaCliente
 
         private void novoEnderecoButton_Click(object sender, EventArgs e)
         {
+            if (cliente != null)
+            {
+                endereco = new Endereco();
+                endereco.ClienteId = cliente.Id;
+            }
+
+            else
+            {
+                SalvarCliente();
+            }
+            
             var form = new CadastroEndereco(endereco);
             form.Show();
+        }
+
+        private void SalvarCliente()
+        {
+            if (nomeClienteTextBox.Text == "")
+            {
+                MessageBox.Show("Campo nulo! Informe um cliente!", "Atenção", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (nomeClienteTextBox != null)
+                {
+                    cliente = new Cliente();
+                    endereco = new Endereco();
+
+                    cliente.Nome = nomeClienteTextBox.Text;
+                    var data = DateTime.Now;
+                    cliente.DataCadastro = data;
+
+                    endereco.ClienteId = _repositorioCliente.Inserir(cliente).Id;
+
+                    const string message = "Cliente inserido com sucesso! Informe seu(s) endereço(s)!!";
+                    MessageBox.Show(message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ namespace SistemaCliente.Infra
         {
             var  db= ObterBancoDados();
 
-            var query = "Insert Into Cliente (Nome, DataCadastro) values (@0, @1)";
+            var query = "Insert Into Cliente (Nome, DataCadastro) values (@0,@1)";
 
             db.Execute(query, cliente.Nome, cliente.DataCadastro);
 
@@ -98,7 +98,7 @@ namespace SistemaCliente.Infra
         {
             var db = ObterBancoDados();
 
-            const string query = "DELETE FROM Cliente WHERE id = @0";
+            const string query = "DELETE cliente from Cliente where Id = @0";
 
             db.Execute(query, cliente.Id);
         }
