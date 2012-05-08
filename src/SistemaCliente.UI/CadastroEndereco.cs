@@ -18,6 +18,7 @@ namespace SistemaCliente
 
         private readonly IEnderecoRepositorio _repositorioEndereco = new EnderecoRepositorio(connectionString, providerName);
         private readonly Endereco endereco;
+        private Cliente cliente;
 
         public CadastroEndereco(Endereco endereco)
         {

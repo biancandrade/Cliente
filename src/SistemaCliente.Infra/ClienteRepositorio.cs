@@ -98,7 +98,7 @@ namespace SistemaCliente.Infra
         {
             var db = ObterBancoDados();
 
-            const string query = "DELETE cliente from Cliente where Id = @0";
+            const string query = "DELETE Cliente FROM Cliente where Id = @0";
 
             db.Execute(query, cliente.Id);
         }

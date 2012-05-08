@@ -56,22 +56,22 @@ namespace SistemaCliente.Infra
             return enderecos;
         }
 
-        public List<Endereco> ObterPor(int id)
+        public List<Endereco> ObterPorCliente(int clienteId)
         {
             var db = ObterBancoDados();
             const string query = "Select e.Id, e.ClienteId, e.Tipo, e.Nome, e.Bairro, e.Cidade From Endereco e where e.ClienteId = @0";
-            var queryResult = db.Query(query, id);
+            var queryResult = db.Query(query, clienteId);
 
             return ConverterParaEndereco(queryResult);
         }
 
-        public void Excluir(Endereco endereco)
+        public Endereco ObterPor(int id)
         {
             var db = ObterBancoDados();
+            const string query = "Select e.Id, e.ClienteId, e.Tipo, e.Nome, e.Bairro, e.Cidade From Endereco e where e.Id = @0";
+            var queryResult = db.Query(query, id);
 
-            const string query = "DELETE endereco from Endereco Where Id = @0";
-
-            db.Execute(query, endereco.Id);
+            return ConverterParaEndereco(queryResult).FirstOrDefault();
         }
 
         private static List<Endereco> ConverterParaEndereco(IEnumerable<dynamic> queryResult)
@@ -94,6 +94,14 @@ namespace SistemaCliente.Infra
             return enderecos;
         }
 
+        public void Excluir (Endereco endereco)
+        {
+            var db = ObterBancoDados();
+
+            const string query = "DELETE endereco from Endereco Where Id = @0";
+
+            db.Execute(query, endereco.Id);
+        }
 
         private Database ObterBancoDados()
         {

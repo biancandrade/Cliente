@@ -11,8 +11,10 @@ namespace SistemaCliente.DI
 
         List<Endereco> ObterTodos();
 
-        List<Endereco> ObterPor(int id);
+        List<Endereco> ObterPorCliente(int clienteId);
 
-        void Excluir(Endereco endereco);
+        Endereco ObterPor(int id);
+
+        void Excluir (Endereco endereco);
     }
 }

@@ -18,7 +18,6 @@ namespace SistemaCliente
         private IEnderecoRepositorio _repositorioEndereco;
 
         private Cliente cliente;
-        private Endereco endereco;
 
         public FormInicial()
         {
@@ -89,20 +88,24 @@ namespace SistemaCliente
             {
                 var mensagem = string.Format("Deseja excluir o contato: {0} ?", dgdClientes.CurrentRow.Cells["columnNome"].Value);
 
-                if (MessageBox.Show(mensagem, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2).Equals(DialogResult.Yes))
+                if (MessageBox.Show(mensagem, Text, MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                
+                cliente = _repositorioCliente.ObterPor((int)dgdClientes.CurrentRow.Cells["columnCodigo"].Value);
+                
+                _repositorioEndereco = new EnderecoRepositorio(connectionString, providerName);
+
+                var enderecos = _repositorioEndereco.ObterPorCliente(cliente.Id);
+                
+                foreach (var _endereco in enderecos)
                 {
-                    cliente = _repositorioCliente.ObterPor((int) dgdClientes.CurrentRow.Cells["columnCodigo"].Value);
-
-                    _repositorioEndereco.Excluir(endereco);
-                    _repositorioCliente.Excluir(cliente);
-
-                    _repositorioEndereco.Inserir(endereco);
-
-                    CarregaGrid();
+                    _repositorioEndereco.Excluir(_endereco);
                 }
+
+                _repositorioCliente.Excluir(cliente);
+                CarregaGrid();
             }
         }
     }
-    }
+}
 

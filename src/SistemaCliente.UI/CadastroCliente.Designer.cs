@@ -31,24 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.excluirEnderecoButton = new System.Windows.Forms.Button();
             this.novoEnderecoButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.nomeClienteTextBox = new System.Windows.Forms.TextBox();
             this.enderecoDataGridView = new System.Windows.Forms.DataGridView();
-            this.enderecoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.db_sistemaClienteDataSet3 = new SistemaCliente.db_sistemaClienteDataSet3();
-            this.enderecoTableAdapter = new SistemaCliente.db_sistemaClienteDataSet3TableAdapters.EnderecoTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.salvarButton = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enderecoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_sistemaClienteDataSet3 = new SistemaCliente.db_sistemaClienteDataSet3();
+            this.enderecoTableAdapter = new SistemaCliente.db_sistemaClienteDataSet3TableAdapters.EnderecoTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.enderecoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enderecoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_sistemaClienteDataSet3)).BeginInit();
@@ -57,7 +55,7 @@
             // excluirEnderecoButton
             // 
             this.excluirEnderecoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.excluirEnderecoButton.Location = new System.Drawing.Point(445, 261);
+            this.excluirEnderecoButton.Location = new System.Drawing.Point(545, 261);
             this.excluirEnderecoButton.Name = "excluirEnderecoButton";
             this.excluirEnderecoButton.Size = new System.Drawing.Size(115, 26);
             this.excluirEnderecoButton.TabIndex = 29;
@@ -68,7 +66,7 @@
             // novoEnderecoButton
             // 
             this.novoEnderecoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoEnderecoButton.Location = new System.Drawing.Point(302, 261);
+            this.novoEnderecoButton.Location = new System.Drawing.Point(402, 261);
             this.novoEnderecoButton.Name = "novoEnderecoButton";
             this.novoEnderecoButton.Size = new System.Drawing.Size(137, 26);
             this.novoEnderecoButton.TabIndex = 28;
@@ -118,7 +116,7 @@
             this.enderecoDataGridView.DataSource = this.enderecoBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -126,50 +124,8 @@
             this.enderecoDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.enderecoDataGridView.Location = new System.Drawing.Point(12, 71);
             this.enderecoDataGridView.Name = "enderecoDataGridView";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.enderecoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.enderecoDataGridView.Size = new System.Drawing.Size(648, 150);
             this.enderecoDataGridView.TabIndex = 33;
-            // 
-            // enderecoBindingSource
-            // 
-            this.enderecoBindingSource.DataMember = "Endereco";
-            this.enderecoBindingSource.DataSource = this.db_sistemaClienteDataSet3;
-            // 
-            // db_sistemaClienteDataSet3
-            // 
-            this.db_sistemaClienteDataSet3.DataSetName = "db_sistemaClienteDataSet3";
-            this.db_sistemaClienteDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // enderecoTableAdapter
-            // 
-            this.enderecoTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(14, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 34;
-            // 
-            // salvarButton
-            // 
-            this.salvarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvarButton.Location = new System.Drawing.Point(566, 261);
-            this.salvarButton.Name = "salvarButton";
-            this.salvarButton.Size = new System.Drawing.Size(93, 26);
-            this.salvarButton.TabIndex = 10;
-            this.salvarButton.Text = "Salvar";
-            this.salvarButton.UseVisualStyleBackColor = true;
             // 
             // Codigo
             // 
@@ -210,6 +166,30 @@
             this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
             this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
             // 
+            // enderecoBindingSource
+            // 
+            this.enderecoBindingSource.DataMember = "Endereco";
+            this.enderecoBindingSource.DataSource = this.db_sistemaClienteDataSet3;
+            // 
+            // db_sistemaClienteDataSet3
+            // 
+            this.db_sistemaClienteDataSet3.DataSetName = "db_sistemaClienteDataSet3";
+            this.db_sistemaClienteDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // enderecoTableAdapter
+            // 
+            this.enderecoTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(14, 242);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 34;
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,7 +201,6 @@
             this.Controls.Add(this.excluirEnderecoButton);
             this.Controls.Add(this.novoEnderecoButton);
             this.Controls.Add(this.nomeClienteTextBox);
-            this.Controls.Add(this.salvarButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastroCliente";
@@ -246,7 +225,6 @@
         private db_sistemaClienteDataSet3TableAdapters.EnderecoTableAdapter enderecoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button salvarButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clienteIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;

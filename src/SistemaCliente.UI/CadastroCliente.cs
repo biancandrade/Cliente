@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using SistemaCliente.DI;
@@ -13,7 +14,7 @@ namespace SistemaCliente
 
         private readonly IClienteRepositorio _repositorioCliente = new ClienteRepositorio(connectionString, providerName);
         private Cliente cliente;
-        private readonly IEnderecoRepositorio _repositorioEndereco = new EnderecoRepositorio(connectionString,providerName);
+        private IEnderecoRepositorio _repositorioEndereco = new EnderecoRepositorio(connectionString,providerName);
         private Endereco endereco;
 
         public CadastroCliente(Cliente cliente)
@@ -21,7 +22,7 @@ namespace SistemaCliente
             InitializeComponent();
             ModoEditavel(cliente);
             this.cliente = cliente;
-            TotalRegistros();
+            TotalRegistros();            
         }
 
         private void ModoEditavel(Cliente _cliente)
@@ -30,7 +31,7 @@ namespace SistemaCliente
             {
                 nomeClienteTextBox.Text = _cliente.Nome;
                 nomeClienteTextBox.Enabled = false;
-                enderecoDataGridView.DataSource = _repositorioEndereco.ObterPor(_cliente.Id).ToList();
+                enderecoDataGridView.DataSource = _repositorioEndereco.ObterPorCliente(_cliente.Id);
             }
             else
             {
@@ -45,10 +46,34 @@ namespace SistemaCliente
             label1.Text = "Total de registros: " + linhas;
         }
 
-
         private void excluirEnderecoButton_Click(object sender, EventArgs e)
         {
+            ExcluirEndereco();
+            CarregaGrid();
+        }
 
+        private void ExcluirEndereco()
+        {
+            if (enderecoDataGridView.CurrentRow != null)
+            {
+                var mensagem = string.Format("Deseja excluir o endereço: {0} ?", enderecoDataGridView.CurrentRow.Cells["Codigo"].Value);
+
+                if (MessageBox.Show(mensagem, Text, MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                {
+                    endereco = _repositorioEndereco.ObterPor((int)enderecoDataGridView.CurrentRow.Cells["Codigo"].Value);
+
+                    _repositorioEndereco.Excluir(endereco);
+                }
+            }
+        }
+
+        public void CarregaGrid()
+        {
+            _repositorioEndereco = new EnderecoRepositorio(connectionString, providerName);
+
+            enderecoDataGridView.DataSource = _repositorioEndereco.ObterTodos().ToList();
+            TotalRegistros();
         }
 
         private void novoEnderecoButton_Click(object sender, EventArgs e)
